@@ -9,6 +9,13 @@ import reducer from '../../../app/hearings/reducers';
 import { defaultHearing, amaHearing, centralHearing } from '../hearings';
 
 export const initialState = {
+  dailyDocket: {
+    hearings: {
+      [defaultHearing.id]: defaultHearing,
+      [amaHearing.id]: amaHearing,
+      [centralHearing.id]: centralHearing
+    }
+  },
   hearingSchedule: { hearings: [defaultHearing, amaHearing, centralHearing] },
   components: {
     dropdowns: {

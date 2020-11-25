@@ -16,9 +16,19 @@ export const userWithConvertCentralHearingsEnabled = {
   userCanConvertCentralHearings: true
 };
 
+export const userWithHearingCoordinatorRole = {
+  ...anyUser,
+  userCanAssignHearingSchedule: true
+};
+
 export const userWithJudgeRole = {
   ...anyUser,
   userHasHearingPrepRole: true
+};
+
+export const userWithVsoRole = {
+  ...anyUser,
+  userCanVsoHearingSchedule: true
 };
 
 export const userUseFullPageVideoToVirtual = {
