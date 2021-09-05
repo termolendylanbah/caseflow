@@ -50,7 +50,7 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           ### Enables caching. Similar to https://github.com/actions/cache.
-          enable_cache: true
+          enable_cache: false # RESTORE true
 
           ### Uses prettier https://prettier.io to format jekyll output HTML.
           format_output: true
