@@ -3,6 +3,16 @@
 name: Build and deploy to GH Pages
 
 on:
+  workflow_dispatch:
+    # inputs:
+    #   name:
+    #     description: 'Commit message on 'gh-pages'
+    #     required: true
+    #     default: 'Mona the Octocat'
+    #   home:
+    #     description: 'location'
+    #     required: false
+    #     default: 'The Octoverse'
   push:
 
 jobs:
@@ -23,6 +33,18 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
+
+      # Install dependencies for jekyll-diagram
+      - uses: actions/setup-python@v1
+      - uses: BSFishy/pip-action@v1
+        with:
+          packages: |
+            blockdiag
+            seqdiag
+            actiag
+            nwdiag
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
 
       - name: 🔨 Install dependencies & build Jekyll site
         uses: limjh16/jekyll-action-ts@v2
