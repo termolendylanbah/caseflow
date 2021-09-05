@@ -58,7 +58,7 @@ kramdown:
 
 
 # Build settings
-theme: jekyll-theme-modernist
+theme: minima
 # remote_theme: pmarsceill/just-the-docs # https://pmarsceill.github.io/just-the-docs/docs/configuration/
 # remote_theme: pages-themes/modernist@v0.2.0
 
