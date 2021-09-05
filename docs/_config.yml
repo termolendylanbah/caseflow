@@ -86,11 +86,11 @@ gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
 # -------------------------------------------
+# Mimic GH Pages: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
 plugins:
   - jekyll-remote-theme
   - jekyll-diagrams
-
-  # Mimic GH Pages: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
+  - jekyll-seo-tag
   - jekyll-coffeescript
   - jekyll-default-layout
   - jekyll-gist
@@ -100,7 +100,6 @@ plugins:
   - jekyll-readme-index
   - jekyll-titles-from-headings
   - jekyll-relative-links
-  - jekyll-seo-tag
 
 # ----- plugin configuration
 readme_index:
