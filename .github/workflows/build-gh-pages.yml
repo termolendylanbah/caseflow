@@ -16,7 +16,7 @@ on:
   push:
 
 jobs:
-  jekyll:
+  jekyll-to-gh-pages:
     # Only run for branches ending with `gh-pages`
     #if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
@@ -41,8 +41,8 @@ jobs:
           packages: |
             blockdiag
             seqdiag
-            actiag
             nwdiag
+          # actiag
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
 
