@@ -100,6 +100,7 @@ plugins:
   - jekyll-readme-index
   - jekyll-titles-from-headings
   - jekyll-relative-links
+  - jekyll-seo-tag
 
 # ----- plugin configuration
 readme_index:
