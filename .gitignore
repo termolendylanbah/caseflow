@@ -65,3 +65,12 @@ local/vacols/build_facols/*
 
 # makefile
 Makefile
+
+# Use same Ruby version as main branch to avoid having to install another version
+!.ruby-version
+
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
