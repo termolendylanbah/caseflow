@@ -25,24 +25,6 @@ seqdiag {
 }
 {% endseqdiag %}
 
-## erd
-{% erd %}
-[Person]
-*name
-height
-weight
-`birth date`
-+birth_place_id
-
-[`Birth Place`]
-*id
-`birth city`
-'birth state'
-"birth country"
-
-Person *--1 `Birth Place`
-{% enderd %}
-
 ## graphviz
 {% graphviz %}
 digraph {

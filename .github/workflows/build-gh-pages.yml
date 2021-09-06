@@ -48,10 +48,6 @@ jobs:
             nwdiag
       # - name: Setup Graphviz
       #   uses: ts-graphviz/setup-graphviz@v1
-      - name: 'Install erd tool via cabal'
-        run: |
-          sudo apt install graphviz cabal-install
-          cabal update && cabal install erd
       # node is needed by mermaid
       - uses: actions/setup-node@v2
         with:
