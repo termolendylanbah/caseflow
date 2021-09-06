@@ -34,7 +34,7 @@ jobs:
         with:
           ruby-version: 2.7.3
 
-      # Install dependencies for jekyll-diagram
+      # Install dependencies for https://github.com/zhustec/jekyll-diagrams
       - uses: actions/setup-python@v1
       - uses: BSFishy/pip-action@v1
         with:
@@ -42,9 +42,20 @@ jobs:
             blockdiag
             seqdiag
             nwdiag
-          # actiag
+          # actiag # doesn't work
       # - name: Setup Graphviz
       #   uses: ts-graphviz/setup-graphviz@v1
+      - name: 'Install erd tool via cabal'
+        run: |
+          sudo apt install graphviz cabal-install
+          cabal update && cabal install erd
+      - uses: actions/setup-node@v2
+        with:
+          # Use same version as https://github.com/limjh16/jekyll-action-ts/blob/master/action.yml#L32
+          node-version: '12'
+      - name: 'Install mermaid tool'
+        run: |
+          npm install -g mermaid.cli
 
       - name: 🔨 Install dependencies & build Jekyll site
         uses: limjh16/jekyll-action-ts@v2
