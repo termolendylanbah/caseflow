@@ -2,7 +2,6 @@
 # 1. Create subdirectory SUBSITE
 # 2. Create a new SUBSITE/_config.yml
 # 3. Add a new entry in Makefile to build the html files into _site/SUBSITE.
-#    Make sure to
 #
 # You can use any static site generator besides Jekyll -- adapte instructions accordingly.
 
