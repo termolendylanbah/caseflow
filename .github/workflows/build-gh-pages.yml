@@ -50,7 +50,7 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           ### Enables caching. Similar to https://github.com/actions/cache.
-          enable_cache: false # RESTORE true
+          enable_cache: true
 
           ### Uses prettier https://prettier.io to format jekyll output HTML.
           format_output: true
@@ -71,6 +71,12 @@ jobs:
           ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
           # custom_opts: '--drafts --future'
           custom_opts: '--verbose'
+      - name: 🔨 Install dependencies & build Jekyll site
+        uses: limjh16/jekyll-action-ts@v2
+        with:
+          enable_cache: true
+          format_output: true
+          custom_opts: '--verbose --config __help/_config.yml'
 
       - name: 🚀 Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3

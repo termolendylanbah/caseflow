@@ -1,0 +1,48 @@
+title: Help
+# email: ""
+
+description: "Help Documentation for Caseflow"
+baseurl: "/caseflow/help" # required for themes to work in GH Pages for this repo
+source: __help
+destination: _site/help
+
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# ----- Mimic GitHub Pages' settings
+# https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site
+# https://jekyllrb.com/docs/configuration/options/
+lsi: false
+safe: true
+# source: [your repo's top level directory]
+# incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+# theme: minima
+remote_theme: pages-themes/modernist@v0.2.0
+
+# -------------------------------------------
+# Mimic GH Pages: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-diagrams
+  # - jekyll-seo-tag
+  - jekyll-coffeescript
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
+
+# ----- plugin configuration
+readme_index:
+  enabled:          true
+  remove_originals: true
+  with_frontmatter: false
