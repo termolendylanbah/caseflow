@@ -34,13 +34,13 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # ----- Set defaults for Jekyll Front Matter so we don't have to include `layout: default` for each md file.
-defaults:
-  -
-    scope:
-      # Note gotcha: https://github.com/pmarsceill/just-the-docs/issues/472
-      path: "docs" # an empty string here means all files in the project
-    values:
-      layout: "default"
+# defaults:
+#   -
+#     scope:
+#       # Note gotcha: https://github.com/pmarsceill/just-the-docs/issues/472
+#       path: "docs" # an empty string here means all files in the project
+#     values:
+#       layout: "default"
 
 # ----- Mimic GitHub Pages' settings that cannot be changed
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site
@@ -82,7 +82,7 @@ gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page"
 gh_edit_repository: "https://github.com/department-of-veterans-affairs/caseflow" # the github URL for your repo
 gh_edit_branch: "gh-pages" # the branch that your docs is served from
-gh_edit_source: docs # the source that your files originate from
+# gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
 # -------------------------------------------
