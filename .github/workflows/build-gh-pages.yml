@@ -72,14 +72,12 @@ jobs:
           # custom_opts: '--drafts --future'
           custom_opts: '--verbose'
       - name: "🔨 Build Jekyll subsites"
-        run: make build_subsites
-      # - name: "🔨 Build Jekyll subsite: __help"
-      #   uses: limjh16/jekyll-action-ts@v2
-      #   with:
-      #     enable_cache: true
-      #     format_output: true
-      #     jekyll_src: __help
-      #     custom_opts: '--verbose --config __help/_config.yml'
+        run: |
+          # README.md for https://github.com/department-of-veterans-affairs/caseflow/tree/gh-pages
+          cp README.md _site/
+
+          #
+          make build_subsites
 
       - name: 🚀 Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
