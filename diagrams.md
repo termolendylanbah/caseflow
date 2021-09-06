@@ -2,9 +2,6 @@
 
 Testing https://github.com/zhustec/jekyll-diagrams
 
-## **TODO:**
-3. import some wiki pages as collections
-
 ## blockdiag
 {% blockdiag %}
 blockdiag {
