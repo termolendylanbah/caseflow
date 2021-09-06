@@ -60,7 +60,7 @@ jobs:
           # prettier_opts: '{ "useTabs": true }'
 
           ### If the jekyll website source is not in root, specify the directory.
-          jekyll_src: docs
+          # jekyll_src: docs
 
           ### In cases where you want to specify the cache key
           ### Follows the format here https://github.com/actions/cache
