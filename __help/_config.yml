@@ -5,6 +5,8 @@ description: "Help Documentation for Caseflow"
 baseurl: "/caseflow/help" # required for themes to work in GH Pages for this repo
 source: __help
 destination: _site/help
+# Since we're building using a subdirectory, explicitly set `repository`
+# https://talk.jekyllrb.com/t/error-your-site-could-not-be-built-no-repo-name-found/5688/5
 repository: department-of-veterans-affairs/caseflow
 
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
