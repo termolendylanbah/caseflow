@@ -96,15 +96,15 @@ just_the_docs:
   # Define which collections are used in just-the-docs and to be included in search
   # https://pmarsceill.github.io/just-the-docs/docs/configuration/#document-collections
   collections:
-    batteam_items:
-      # Give the collection a name
-      name: "Bat Team"
-      # Exclude the collection from the navigation
-      # Supports true or false (default)
-      nav_exclude: false
-      # Exclude the collection from the search
-      # Supports true or false (default)
-      search_exclude: false
+    # batteam_items:
+    #   # Give the collection a name
+    #   name: "Bat Team"
+    #   # Exclude the collection from the navigation
+    #   # Supports true or false (default)
+    #   nav_exclude: false
+    #   # Exclude the collection from the search
+    #   # Supports true or false (default)
+    #   search_exclude: false
 
 # -------------------------------------------
 # Mimic GH Pages: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
