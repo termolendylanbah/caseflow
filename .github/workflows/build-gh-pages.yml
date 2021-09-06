@@ -35,6 +35,10 @@ jobs:
           ruby-version: 2.7.3
 
       # Install dependencies for https://github.com/zhustec/jekyll-diagrams
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
       - uses: actions/setup-python@v1
       - uses: BSFishy/pip-action@v1
         with:
