@@ -9,7 +9,7 @@ destination: _site/help
 # https://talk.jekyllrb.com/t/error-your-site-could-not-be-built-no-repo-name-found/5688/5
 repository: department-of-veterans-affairs/caseflow
 
-url: "http://department-of-veterans-affairs.github.io/caseflow" # the base hostname & protocol for your site, e.g. http://example.com
+# url: "http://department-of-veterans-affairs.github.io/caseflow" # the base hostname & protocol for your site, e.g. http://example.com
 
 # ----- Mimic GitHub Pages' settings
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site
@@ -25,8 +25,8 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 
-# theme: minima
-remote_theme: pages-themes/modernist@v0.2.0
+theme: minima
+# remote_theme: pages-themes/modernist@v0.2.0
 
 # -------------------------------------------
 # Mimic GH Pages: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
