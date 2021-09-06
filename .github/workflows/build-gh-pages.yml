@@ -35,16 +35,16 @@ jobs:
           ruby-version: 2.7.3
 
       # Install dependencies for jekyll-diagram
-      # - uses: actions/setup-python@v1
-      # - uses: BSFishy/pip-action@v1
-      #   with:
-      #     packages: |
-      #       blockdiag
-      #       seqdiag
-      #       nwdiag
-      #     # actiag
-      # - name: Setup Graphviz
-      #   uses: ts-graphviz/setup-graphviz@v1
+      - uses: actions/setup-python@v1
+      - uses: BSFishy/pip-action@v1
+        with:
+          packages: |
+            blockdiag
+            seqdiag
+            nwdiag
+          # actiag
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
 
       - name: 🔨 Install dependencies & build Jekyll site
         uses: limjh16/jekyll-action-ts@v2
