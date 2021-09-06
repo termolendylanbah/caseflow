@@ -71,6 +71,7 @@ jobs:
           ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
           # custom_opts: '--drafts --future'
           custom_opts: '--verbose'
+      - name: "🔨 Build Jekyll subsites"
         run: make build_subsites
       # - name: "🔨 Build Jekyll subsite: __help"
       #   uses: limjh16/jekyll-action-ts@v2
