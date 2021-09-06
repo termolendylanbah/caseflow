@@ -43,8 +43,8 @@ jobs:
             seqdiag
             nwdiag
           # actiag
-      - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v1
+      # - name: Setup Graphviz
+      #   uses: ts-graphviz/setup-graphviz@v1
 
       - name: 🔨 Install dependencies & build Jekyll site
         uses: limjh16/jekyll-action-ts@v2

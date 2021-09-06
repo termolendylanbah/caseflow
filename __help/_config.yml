@@ -5,6 +5,7 @@ description: "Help Documentation for Caseflow"
 baseurl: "/caseflow/help" # required for themes to work in GH Pages for this repo
 source: __help
 destination: _site/help
+repository: department-of-veterans-affairs/caseflow
 
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
