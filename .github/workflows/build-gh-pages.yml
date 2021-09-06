@@ -40,19 +40,20 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
       - uses: actions/setup-python@v1
+      # Also provides node. node is needed by mermaid
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
+      # node is needed by mermaid
+      # - uses: actions/setup-node@v2
+      #   with:
+      #     # Use same version as https://github.com/limjh16/jekyll-action-ts/blob/master/action.yml#L32
+      #     node-version: '12'
       - uses: BSFishy/pip-action@v1
         with:
           packages: |
             blockdiag
             seqdiag
             nwdiag
-      # - name: Setup Graphviz
-      #   uses: ts-graphviz/setup-graphviz@v1
-      # node is needed by mermaid
-      - uses: actions/setup-node@v2
-        with:
-          # Use same version as https://github.com/limjh16/jekyll-action-ts/blob/master/action.yml#L32
-          node-version: '12'
       - name: 'Install mermaid, nomnoml, state-machine-cat, and wavedrom-cli tools'
         run: |
           npm install -g mermaid.cli nomnoml state-machine-cat wavedrom-cli
