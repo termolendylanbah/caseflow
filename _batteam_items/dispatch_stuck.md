@@ -1,4 +1,5 @@
 ---
+parent: Bat Team
 my_var: ok
 tags: ["batteam", dispatch", "stuck"]
 ---
