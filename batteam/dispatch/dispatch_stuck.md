@@ -1,8 +1,5 @@
 ---
-grand_parent: Bat Team
-parent: Caseflow Dispatch
 my_var: ok
-product: Dispatch
 tags: ["batteam", dispatch", "stuck"]
 ---
 

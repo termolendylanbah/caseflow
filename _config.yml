@@ -41,6 +41,14 @@ defaults:
       path: "batteam" # an empty string here means all files in the project
     values:
       layout: "default"
+  -
+    scope:
+      path: "batteam/dispatch/*.md"
+    values:
+      grand_parent: Bat Team
+      parent: Caseflow Dispatch
+      product: Dispatch
+
 
 # ----- Mimic GitHub Pages' settings that cannot be changed
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site
