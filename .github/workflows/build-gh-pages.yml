@@ -2,7 +2,9 @@
 
 name: Build and deploy to GH Pages
 
-on: [push, workflow_dispatch]
+on:
+  push:
+  workflow_dispatch:
     inputs:
       # name:
       #   description: 'Commit message on 'gh-pages'
