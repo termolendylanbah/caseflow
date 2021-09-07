@@ -137,8 +137,6 @@ export const HearingDateDropdown = (props) => {
     // determine if any selection was made
     if (typeof (value) === 'string') {
       comparison = (opt) => opt?.value.hearingDate === formatDateStr(value, 'YYYY-MM-DD', 'YYYY-MM-DD');
-    } else if (value.hearingDate) {
-      comparison = (opt) => opt?.value.hearingDate === value.hearingDate;
     } else {
       comparison = (opt) => opt?.value === value;
     }
