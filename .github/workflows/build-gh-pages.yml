@@ -90,6 +90,8 @@ jobs:
 
           #
           make build_subsites
+          pwd
+          ls -l _site/
 
       - name: 🚀 Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
@@ -100,3 +102,8 @@ jobs:
           # if you are including the line below, make sure your source files are NOT in the master branch:
           publish_branch: gh-pages
           commit_message: ${{ github.event.head_commit.message }}
+
+      - name: Check directories
+        run: |
+          pwd
+          ls -l _site/
