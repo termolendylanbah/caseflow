@@ -2,18 +2,7 @@
 
 name: Build and deploy to GH Pages
 
-on:
-  push:
-  workflow_dispatch:
-    inputs:
-      # name:
-      #   description: 'Commit message on 'gh-pages'
-      #   required: true
-      #   default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
+on: [push, workflow_dispatch]
 
 jobs:
   build-gh-pages:
