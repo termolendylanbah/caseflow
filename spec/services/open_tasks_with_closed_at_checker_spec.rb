@@ -20,6 +20,17 @@ describe OpenTasksWithClosedAtChecker, :postgres do
     task
   end
 
+  let!(:open_hearing_task_with_closed_parent) do
+    appeal = create(:appeal)
+    parent = create(:assign_hearing_disposition_task, appeal: appeal)
+    task = create(:no_show_hearing_task, :assigned, parent: parent, closed_at: nil, status: :assigned)
+    parent.update!(closed_at: Time.zone.now, status: :completed)
+    Task.find(task.id).update!(status: Constants.TASK_STATUSES.on_hold, closed_at: nil)
+    appeal.reload
+    task
+    binding.pry
+  end
+
   describe "#call" do
     it "reports one Task in bad state" do
       subject.call
@@ -27,6 +38,8 @@ describe OpenTasksWithClosedAtChecker, :postgres do
       expect(subject.report?).to eq(true)
       expect(subject.report).to match(/1 open Task with a closed_at value/)
       expect(subject.report).to match(/1 open Task with a closed parent Task/)
+      expect(subject.report).to match(/1 open Hearing Task with a closed parent Task/)
+      expect(subject.report).to match(/AppealsWithClosedRootTaskOpenChildrenQuery: 1/)
     end
   end
 end
