@@ -1,28 +1,52 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Link from '@department-of-veterans-affairs/caseflow-frontend-toolkit/components/Link';
 import { get } from 'lodash';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 import { taskById } from '../selectors';
 import { requestPatch } from '../uiReducer/uiActions';
 import { taskActionData } from '../utils';
 import TextareaField from '../../components/TextareaField';
+import RadioField from '../../components/RadioField';
 import COPY from '../../../COPY';
 import TASK_STATUSES from '../../../constants/TASK_STATUSES';
 import QueueFlowModal from './QueueFlowModal';
+import { BOOLEAN_RADIO_OPTIONS } from '../../intake/constants';
 
 /* eslint-disable camelcase */
 const CancelTaskModal = (props) => {
   const { task, hearingDay, highlightFormItems } = props;
   const taskData = taskActionData(props);
 
+  const cancelTaskFormSchema = yup.object().shape({
+    deathDismissalCancel: yup.boolean().required(),
+    taskInstructions: yup.string().required(),
+  });
+  const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm({
+    resolver: yupResolver(cancelTaskFormSchema),
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit'
+  });
+
   // Show task instructions by default
   const shouldShowTaskInstructions = get(taskData, 'show_instructions', true);
 
   const [instructions, setInstructions] = useState('');
+  const [deathDismissalCancel, setDeathDismissalCancel] = useState(null);
+
+  const deathDismissalCancelReason = watch('death-dismissal-cancel');
+
+  useEffect(() => {
+    if (deathDismissalCancelReason === 'true') {
+      setValue('death-dismissal-cancel', COPY.TASK_SNAPSHOT_CANCEL_REASONS.death_dismissal);
+    }
+  }, [deathDismissalCancelReason]);
 
   const validateForm = () => {
     if (!shouldShowTaskInstructions) {
@@ -73,6 +97,16 @@ const CancelTaskModal = (props) => {
           <br />
         </React.Fragment>
       }
+      <RadioField
+        name="death-dismissal-cancel"
+        label="Is this task being cancelled due to the Veteran's Death?"
+        vertical
+        options={BOOLEAN_RADIO_OPTIONS}
+        onChange={(value) => setDeathDismissalCancel(value)}
+        errorMessage={errors?.['death-dismissal-cancel']?.message}
+        value={deathDismissalCancel}
+        inputRef={register}
+      />
       {get(taskData, 'show_instructions', true) &&
         <TextareaField
           name={COPY.ADD_COLOCATED_TASK_INSTRUCTIONS_LABEL}
@@ -80,6 +114,7 @@ const CancelTaskModal = (props) => {
           id="taskInstructions"
           onChange={setInstructions}
           value={instructions}
+          inputRef={register}
         />
       }
     </QueueFlowModal>
