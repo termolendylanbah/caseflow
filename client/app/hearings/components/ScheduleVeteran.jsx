@@ -127,19 +127,18 @@ export const ScheduleVeteran = ({
 
   const virtual = hearing?.requestType === VIRTUAL_HEARING_LABEL;
 
-  const virtualHearing = virtual ? { status: 'pending' } : null;
-
   const allDropdownOptions = allScheduleVeteranDropdownOptions(appeal);
 
   const hearingRequestTypeDropdownCurrentOption = hearingRequestTypeCurrentOption(
     allDropdownOptions,
-    virtualHearing
+    hearing?.virtualHearing
   );
 
   const hearingRequestTypeDropdownOptions = hearingRequestTypeOptions(
     allDropdownOptions,
     hearingRequestTypeDropdownCurrentOption
   );
+
   // Get parent hearing task of this task which could be
   // Schedule Hearing Task or Assign Hearing Disposition Task
   const parentHearingTask = parentTasks(
@@ -385,6 +384,8 @@ export const ScheduleVeteran = ({
   };
 
   const scheduleVeteranRequestTypeDropdownOnchange = (selectedOption) => {
+    // I'm not sure what this is supposed to do? Right now it calls 'convertToVirtual'
+    // with two arguments, I think convertToVirtual doesn't take any arguments?
     convertToVirtual(
       'virtualHearing',
       { requestCancelled: selectedOption.label !== VIRTUAL_HEARING_LABEL,
